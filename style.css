@@ -1,0 +1,169 @@
+/*  global styles to reset default values  ------------------------------------------- */
+*,
+*:before,
+*:after { box-sizing: border-box; }
+
+body, div, ul, li, img, video, section, figure, main, footer, h1, h2, h3, p, a 
+{ margin:0; padding:0; border:0; }
+
+@font-face {font-family: the_amazing_grace;
+src:url(fonts/the_amazing_grace.ttf);}
+
+@font-face {font-family: dense-regular;
+src:url(fonts/dense-regular.otf);}
+
+body { font-size:1em ; background:#eee; }
+
+/*  this sets page width: 60em = 960px  ---------------------------------------------- */
+.container { max-width:60em; margin:0 auto; background:#eee; }
+
+
+/*  top navigation section  ----------------------------------------------------------- */
+nav { padding: .5em; min-height: 2em; border-bottom: 2px #eee solid; }
+nav h1 { font-family: dense-regular; font-size:2em; margin-bottom:.5em; margin-left: 1em; margin-right: 1em;margin-top: 1em; text-align: center}
+nav a { white-space: nowrap; font-size: 2em; }
+
+nav ul { padding-bottom: 1em; list-style-type:none; font-family: dense-regular; font-size:1em; border-bottom: 4px solid #58bec2;  }
+nav ul li { display:inline; margin-right:7.5em; margin-left: 7.5em; }
+
+
+.container > figure { margin:2em 0 1.5em; }
+.container > figure figcaption h2 { line-height:1.15em; font-size:2em; margin-bottom:1em; }
+
+figcaption { margin-bottom:1em; }
+
+
+section { margin:2em 0 0; padding-bottom: 2em; }
+
+.container > h2 { line-height:1.15em; font-size:2em; margin:1em 0; }
+.container figure h2 { line-height:1.15em; font-size:2em; margin-bottom:1em; }
+
+
+section.project figure, section.project div { margin-bottom:1em; }
+
+
+
+
+img { max-width:100%; height:auto; }
+
+video { max-width:100%; }
+
+/*  default paragraph styling  -------------------------------------------------------- */
+p { margin:0 0 1.5em 0; line-height:1.5em; }
+
+
+
+/*  footer section  ------------------------------------------------------------------- */
+footer { font-size:.8em; padding: 1em .25em; border-top: 2px #efefef solid; }
+
+footer ul { list-style-type: none; }
+footer li { list-style-type: none; margin:0 0 .5em 0;  }
+
+footer h3 { margin:0 0 1em 0; font-size:2em; }
+
+
+/*  link styling  --------------------------------------------------------------------- */
+a { color: #000000; text-decoration: none; }
+a:visited { color:#000000; }
+a:hover { color:#dd9ec7; text-decoration: underline; }
+a:active { color:#58bec2; }
+
+
+/* 
+IMPORTANT: media query switches on grid layout if page width wider than 550px
+--------------------------------------------------------------------------------------- */
+@media (min-width: 550px) { 
+
+/*  IMPORTANT: min-width:60em rule stops the container from resizing  ----------------- */
+	.container { min-width:0; min-width:60em; }
+
+
+/*  nav grid  ------------------------------------------------------------------------- */	
+	nav { 	display: grid; 
+			grid-template-columns:;
+			background:#eee;
+			border-bottom: 0 #eee none;
+	}
+
+	nav ul { margin-bottom:em; margin-top:em; text-align: center;  }
+
+
+	.container > figure { margin-bottom:6em; }
+
+
+/*  section grid  --------------------------------------------------------------------- */	
+	section.project { 
+	display: grid; 
+	grid-template-columns: repeat(12, [col] 1fr);
+	grid-template-rows: auto;
+	grid-column-gap: 0.625em;   /*  .625% of 16 = 10, 0.625em = 10px ...  */
+	grid-row-gap: 0;
+	padding: 0 0.625em;				/*  sets inner margin on grid  */
+	background:transparent;
+	}
+
+	section.project figure { background:transparent; }
+	section.project figcaption { margin-top:.25em; font-size:.8em; text-align: right; }
+	section.project img { border-radius: .25em; }
+	section.project h3 { margin: 0 0 1em 0; font-size: 3em; }
+	section.project p { column-count: 1; column-gap: 0; column-width: auto; }
+
+
+/*  section grid area layouts  -------------------------------------------------------- */	
+	section.project {
+		grid-template-areas:
+		"sub sub sub sub sub sub sub sub sub ... ... ..."	/* section project */
+		"img img img txt txt txt txt txt txt txt ... ..."	/* section project */
+		;
+	}
+
+	section.project.right {
+		grid-template-areas:	
+		"sub sub sub sub sub sub sub sub sub ... ... ..."	/* section project right */
+		"txt txt txt txt txt txt txt ... img img img ..."	/* section project right */
+		;
+	}
+
+	section.project.version {
+		grid-template-areas:
+		"... txt txt txt txt txt txt ... img img ... ..."	/* section project version */
+		"... sub sub sub sub sub sub sub sub sub ... ..."	/* section project version */
+		;
+	}
+    
+    }
+
+    section.project.two-col {
+		grid-template-areas:
+        "... sub sub sub sub sub sub sub sub sub ... ..."	/* section project version */
+		"... tx1 tx1 tx1 tx1 ... tx2 tx2 tx2 tx2 ... ..."	/* section project version */
+		;
+	}
+
+	section.project.version figure { align-self: end; }
+	
+/*  grid-areas to section item selectors  --------------------------------------------- */	
+	section.project figure		{ grid-area: img; align-self: start; }
+	section.project div			{ grid-area: txt; }
+	section.project > h3		{ grid-area: sub;}
+
+
+/*  footer grid  ---------------------------------------------------------------------- */	
+	footer { 	display: grid; 
+				grid-template-columns: 1fr auto;
+				grid-template-rows: repeat(minmax(2em, auto));
+				grid-gap: 4px;
+				background:#58bec2;
+				border-top: 0 #eee none;
+				margin-top:2em;
+                font-size: 1em;
+		}
+
+	footer h3 { padding-left: 1em; }
+	footer ul { padding-right: 1em; }
+	footer li { display:inline; margin-left:.5em; }
+	footer li a 		{ background:#fff; padding: .25em .25em; border-radius: .25em; font-weight:bold; }
+	footer li a:hover	{ background:#000; }
+
+} /* end 550px media query */
+

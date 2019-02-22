@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Rahul Caines | Projects Grid</title>
+	<link href="style.css" rel="stylesheet">
+<style>
+
+    body {font-family: dense-regular; }
+    h2 {text-align:center;}
+    a {font-size: 1em;}
+    h3 {text-align: center; font-size: 1.5em; padding-top: .25em; padding-bottom: .25em;}
+    h4 {text-align: center; font-size: 1.75em;}
+    
+.container > figure { margin-bottom: 1em; }
+
+@media (min-width: 550px) { 
+    
+	section.projects  { 
+		display: grid;
+		grid-template-columns: repeat(12, [col] 1fr);
+		grid-template-rows: auto;
+		grid-column-gap: 1em;
+		grid-row-gap: 1em;
+		grid-template-areas:
+		"g1 g1 g1 g1 g2 g2 g2 g2 g3 g3 g3 g3"
+        "g4 g4 g4 g4 g5 g5 g5 g5 g6 g6 g6 g6"
+        ".. .. .. .. .. .. .. .. .. .. .. .."
+		;
+	}
+	
+	 
+	section.projects figure:nth-of-type(1) { grid-area: g1; border-bottom: 4px ; border-style:  solid ; border-bottom-color: #58bec2;}
+	section.projects figure:nth-of-type(2) { grid-area: g2; border-bottom: 4px ; border-style:  solid ; border-bottom-color: #58bec2; }
+	section.projects figure:nth-of-type(3) { grid-area: g3; border-bottom: 4px ; border-style:  solid ; border-bottom-color: #58bec2;}
+	section.projects figure:nth-of-type(4) { grid-area: g4; border-bottom: 4px ; border-style:  solid ; border-bottom-color: #58bec2;}
+	section.projects figure:nth-of-type(5) { grid-area: g5; border-bottom: 4px ; border-style:  solid ; border-bottom-color: #58bec2;}
+	section.projects figure:nth-of-type(6) { grid-area: g6; border-bottom: 4px ; border-style:  solid ; border-bottom-color: #58bec2;}
+	
+
+	 
+	
+	section.projects figure img { border-radius: 0 0 0em 0em; border-radius: 0 0em 0 0em; }
+	
+	section.projects figure figcaption { margin-left: 1em; font-size:.8em; }
+	
+	section.projects figure:nth-of-type(4) a { 
+		display:block;
+		
+		background-image: url();
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		text-decoration: none;
+	}
+	section.projects figure:nth-of-type(1) a:hover { background-position: 0 -160px; }
+	section.projects figure:nth-of-type(2) a:active { background-position: 0 -320px; }
+	
+	section.projects figure:nth-of-type(3) h3 {margin:0;line-height:1em; background:#eee; }
+	section.projects figure:nth-of-type(4) video {  }
+	section.projects figure:nth-of-type(5) figcaption {margin-top:-2em; background:#eee; }
+    section.projects figure:nth-of-type(6) h3{margin:0;line-height:1em; background:#eee; }
+	
+	
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<nav>
+<h1><a href="index.html">RAHUL CAINES</a></h1> 
+<ul>
+	<li><a href="projects.html">PROJECTS</a></li>
+	<li><a href="about.html">ABOUT</a></li>
+	<li><a href="contact.html">CONTACT</a></li>
+</ul>
+</nav> <!-- end nav -->
+
+<h2>- PROJECTS -</h2>
+
+<section class="projects">
+     
+        
+    <figure> <a href="project_01.html"><img src="image/born-this-way-foundation-square.gif"></a>
+        <caption><h3><a href="project_01.html">-MOTION GRAPHICS- </a></h3></caption> 
+            
+    </figure>
+    
+    <figure>
+	   
+        <a href="project_02.html"><img src="image/website_logo.gif"></a> 
+        <caption><h3><a href="project_02.html">- WEBSITE DESIGN -</a></h3></caption> 
+    </figure>
+
+	<figure>
+		
+		<a href="project_03.html"><img  src="image/Cover.png"></a>
+		<caption><h3><a href="project_03.html">- PROCESS BOOK-</a></h3></caption>
+	</figure>
+
+	<figure>
+		
+		<a href="project_04.html"><img src="image/walker_agency.png"></a>
+		<caption><h3><a href="project_04.html">- INDUSTRY WORK -</a></h3></caption>
+	</figure>
+	
+	
+	<figure>
+        
+		<a href="project_05.html"><img  src="image/client_logo.png"></a>
+		<caption><h3><a href="project_05.html">- CLIENT WORK -</a></h3></caption>
+	</figure>
+    
+    <figure>
+		
+		<a href="project_06.html"><img  src="image/Jeffree_Star_Final_Colour.png"></a>
+		<caption><h3><a href="project_06.html">- FREE TIME-</a></h3></caption> 
+    </figure>
+
+</section>
+        
+
+<footer>
+	<h4><a href="index.html">- RAHUL CAINES -</a></h4>
+	<ul>
+		
+	</ul>
+</footer> <!-- end footer -->
+
+
+</div> <!-- end of container -->
+
+</body>
+</html>
